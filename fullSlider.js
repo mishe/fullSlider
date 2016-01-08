@@ -56,8 +56,8 @@
                     getImgList = options.getImgList;
                 //zepto 的实例不能通过 getImgList intanceof $ 获得true;
                 if (typeof(getImgList) === 'string' || getImgList.selector) {
-                    $(getImgList).each(function () {
-                        tempArray.push(src);
+                    $(getImgList).each(function (item) {
+                        tempArray.push(item.src);
                     });
                     imgsrc = tempArray;
                 } else if (Object.prototype.toString.call(getImgList) == '[object Array]') {
